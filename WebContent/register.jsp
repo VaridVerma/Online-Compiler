@@ -58,19 +58,21 @@
 		</center>
 	<br>
 	<form action="login.controller.Register" method="post">
+	<center>
 		<pre>
-			Email		:	<input type="email" name="email"> <br>
-			Password	:	<input type="password" name="password"> <br>
-			Mobile No	:	<input type="text" name="mobile">	<br>
-			City		:	<select name="city">
+Email		:	<input type="email" name="email"> <br>
+Password	:	<input type="password" name="password"> <br>
+Mobile No	:	<input type="text" name="mobile">	<br>
+City		:	<select name="city">
 				<option>BBSR</option>
 				<option>CTC</option>
 				<option>RKL</option>
 				<option>PURI</option>
 				
 			</select>
-							<input type="submit" value="Register" class="btn btn-primary">
+			<input type="submit" value="Register" class="btn btn-primary">
 		</pre>
+		</center>
 	</form>	
 	
 </body>

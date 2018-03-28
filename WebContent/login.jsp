@@ -4,6 +4,13 @@
 <link href="bootstrap.min.css" rel="stylesheet" type="text/css">
 <meta charset="ISO-8859-1">
 <style type="text/css">
+body{
+	background-repeat:no-repeat;
+	height:100%;
+	background-position:center;
+	background-size:cover;
+}
+
 	li
 	{
 		float: left;
@@ -32,7 +39,7 @@
 <title>HOME</title>
 
 </head>
-<body background="s.jpg">
+<body background="bac.jpg">
 	<ul>
 		<li> <a href="index.jsp">HOME</a></li>
 		<li> <a href="login.jsp">LOGIN</a></li>
@@ -45,7 +52,7 @@
 				if(request.getParameter("msg1") != null)
 				{
 				out.print("<font color='green'>");
-				out.print(request.getParameter("msg1"));
+				out.print(request.getParameter("msg1")); 
 				out.print("</font>");
 				}
 			if(request.getParameter("msg2") != null)
@@ -59,11 +66,13 @@
 		<br>
 	
 	<form action="login.controller.Login" method="post">
+	<center>
 		<pre>
-			Email		:	<input type="email" name="email"> <br>
-			Password	:	<input type="password" name="password"> <br>
-					<input type="submit" value="Login" class="btn btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;<a href="forgotPassword.jsp">Forgot Password</a>
+Email		:	<input type="email" name="email"> <br>
+Password	:	<input type="password" name="password"> <br>
+			   <input type="submit" value="Login" class="btn btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;
 		</pre>
+		</center>
 	</form>	
 </body>
 </html>

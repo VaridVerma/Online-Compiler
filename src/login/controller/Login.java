@@ -33,7 +33,7 @@ public class Login extends HttpServlet
 		{
 			HttpSession session = request.getSession();
 			session.setAttribute("email", u.getEmail());
-			response.sendRedirect("run.jsp?msg1=Sucessfully Login ...");
+			response.sendRedirect("Choose.jsp?msg1=Sucessfully Login ...");
 		}
 		else
 			response.sendRedirect("login.jsp?msg2=Invalid Email or Password...");

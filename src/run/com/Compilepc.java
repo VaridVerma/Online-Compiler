@@ -1,12 +1,12 @@
 package run.com;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.io.File;
-import java.io.FileReader;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,8 +16,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/com.run.Compilep")
-public class Compilep extends HttpServlet {
+/**
+ * Servlet implementation class Compilepc
+ */
+@WebServlet("/run.com.Compilepc")
+public class Compilepc extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,7 +37,7 @@ public class Compilep extends HttpServlet {
 		
 		System.out.println("Current working directory : "+currentDirectory);
 		      String fname= sess.getAttribute("fname").toString();
-		      Process pro = Runtime.getRuntime().exec("javac "+fname+".java");
+		      Process pro = Runtime.getRuntime().exec("gcc "+fname+".c");
 		      InputStream ins=pro.getInputStream();
 		      
 		      String line = null;
@@ -54,13 +57,13 @@ public class Compilep extends HttpServlet {
 			    }
 			    if(flag==0) {
 					 out.println("compiled Succesfully");
-					 if(sess.getAttribute("ques").equals("1_java")) {
+					 if(sess.getAttribute("ques").equals("1_c")) {
 						 try
 					        { 
 							 String output = sess.getAttribute("email").toString()+"_"+sess.getAttribute("ques")+".txt";
 					         sess.setAttribute("output", output);
-						
-					         Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"java "+fname+">"+output+" &exit \"");
+							 // We are running "dir" and "ping" command on cmd
+					         Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"a.exe>"+output+" &exit \"");
 					         String line1=null;
 					         Thread.sleep(3000);
 					         FileReader fr=new FileReader(output);
@@ -71,7 +74,7 @@ public class Compilep extends HttpServlet {
 					      }
 					     out.println("</h3>");
 					     
-					     out.println("<a href='run.com.Compare?q=1_java'>Submit</a>");
+					     out.println("<a href='run.com.Comparec?q=1_c'>Submit</a>");
 					        }
 					        
 					        
@@ -81,12 +84,12 @@ public class Compilep extends HttpServlet {
 					            e.printStackTrace();
 					        } 
 					 }
-					 if(sess.getAttribute("ques").equals("2_java")) {
+					 if(sess.getAttribute("ques").equals("2_c")) {
 						 try
 					        { 
 							 String output = sess.getAttribute("email").toString()+"_"+sess.getAttribute("ques")+".txt";
 							 sess.setAttribute("output", output);
-					         Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"java "+fname+"<input.txt>"+output+" &exit \"");
+					         Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"a.exe<input2_c.txt>"+output+" &exit \"");
 					         String line1=null;
 					         Thread.sleep(3000);
 					         FileReader fr=new FileReader(output);
@@ -96,7 +99,7 @@ public class Compilep extends HttpServlet {
 					    	  out.print(line1);
 					      }
 					     out.println("</h3>");
-					     out.println("<a href='run.com.Compare?q=2_java'>Submit</a>");
+					     out.println("<a href='run.com.Comparec?q=2_c'>Submit</a>");
 					        }
 					        
 					        
@@ -106,12 +109,12 @@ public class Compilep extends HttpServlet {
 					            e.printStackTrace();
 					        } 
 					 }
-					 if(sess.getAttribute("ques").equals("3_java")) {
+					 if(sess.getAttribute("ques").equals("3_c")) {
 						 try
 					        { 
 							 String output = sess.getAttribute("email").toString()+"_"+sess.getAttribute("ques")+".txt";
 							 sess.setAttribute("output", output);
-					         Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"java "+fname+"<input3.txt>"+output+" &exit \"");
+					         Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"a.exe<input3_c.txt>"+output+" &exit \"");
 					         String line1=null;
 					         Thread.sleep(3000);
 					         FileReader fr=new FileReader(output);
@@ -121,7 +124,7 @@ public class Compilep extends HttpServlet {
 					    	  out.print(line1);
 					      }
 					     out.println("</h3>");
-					     out.println("<a href='run.com.Compare?q=3_java'>Submit</a>");
+					     out.println("<a href='run.com.Comparec?q=3_c'>Submit</a>");
 					        }
 					        
 					        
@@ -131,12 +134,12 @@ public class Compilep extends HttpServlet {
 					            e.printStackTrace();
 					        } 
 					 }
-					 if(sess.getAttribute("ques").equals("4_java")) {
+					 if(sess.getAttribute("ques").equals("4_c")) {
 						 try
 					        { 
 							 String output = sess.getAttribute("email").toString()+"_"+sess.getAttribute("ques")+".txt";
 							 sess.setAttribute("output", output);
-					         Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"java "+fname+"<input4.txt>"+output+" &exit \"");
+					         Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"a.exe<input4_c.txt>"+output+" &exit \"");
 					         String line1=null;
 					         Thread.sleep(3000);
 					         FileReader fr=new FileReader(output);
@@ -146,7 +149,7 @@ public class Compilep extends HttpServlet {
 					    	  out.print(line1);
 					      }
 					     out.println("</h3>");
-					     out.println("<a href='run.com.Compare?q=4_java'>Submit</a>");
+					     out.println("<a href='run.com.Comparec?q=4_c'>Submit</a>");
 					        }
 					        
 					        
@@ -156,12 +159,12 @@ public class Compilep extends HttpServlet {
 					            e.printStackTrace();
 					        } 
 					 }
-					 if(sess.getAttribute("ques").equals("5_java")) {
+					 if(sess.getAttribute("ques").equals("5_c")) {
 						 try
 					        { 
 							 String output = sess.getAttribute("email").toString()+"_"+sess.getAttribute("ques")+".txt";
 							 sess.setAttribute("output", output);
-					         Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"java "+fname+"<input5.txt>"+output+" &exit \"");
+					         Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"a.exe<input5_c.txt>"+output+" &exit \"");
 					         String line1=null;
 					         Thread.sleep(3000);
 					         FileReader fr=new FileReader(output);
@@ -171,7 +174,7 @@ public class Compilep extends HttpServlet {
 					    	  out.print(line1);
 					      }
 					     out.println("</h3>");
-					     out.println("<a href='run.com.Compare?q=5_java'>Submit</a>");
+					     out.println("<a href='run.com.Comparec?q=5_c'>Submit</a>");
 					        }
 					        
 					        
@@ -188,10 +191,6 @@ public class Compilep extends HttpServlet {
 		    }
 		
 	}
-	
+		
 
 	}
-
-	
-
-

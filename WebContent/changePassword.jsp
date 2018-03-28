@@ -34,9 +34,9 @@
 </head>
 <body>
 	<ul>
-		<li> <a href="index.jsp">HOME</a></li>
-		<li> <a href="login.jsp">LOGIN</a></li>
-		<li> <a href="register.jsp">REGISTER</a></li>
+		<li> <a href="Choose.jsp">HOME</a></li>
+		<li> <a href="logout.jsp">LOGOUT</a></li>
+		
 		
 	</ul>
 	<br>

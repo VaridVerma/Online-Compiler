@@ -49,6 +49,49 @@ public class UsersDao
 		return result;
 	}
 
+	public static int checkPassword(Users u) 
+	{
+		int status = 0 ;
+		try 
+		{
+			Connection con = Provider.getConnection();
+			String sql= "select * from Users where email=? and password=?";
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, u.getEmail());
+			pst.setString(2, u.getPassword());
+			ResultSet rs = pst.executeQuery();
+			if(rs.next())
+				status=1;
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+
+		return status;
+	}
+	public static int doChangePassword(Users u) 
+	{
+		int status = 0 ;
+		try 
+		{
+			Connection con = Provider.getConnection();
+			String sql= "update Users set password=? where email=?";
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, u.getPassword());
+			pst.setString(2, u.getEmail());
+			status = pst.executeUpdate();
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+
+		return status;
+
+		
+	}
+
 }
 
 

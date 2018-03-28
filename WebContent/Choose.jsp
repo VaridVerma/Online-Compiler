@@ -36,7 +36,7 @@
 				response.sendRedirect("login.jsp");
 		%>
 	<ul>
-		<li> <a href="welcome.jsp">Home</a></li>
+		<li> <a href="Choose.jsp">Home</a></li>
 		<li> <a href="changePassword.jsp">Change Password</a></li>
 		<li> <a href="logout.jsp">Logout</a></li>
 		
@@ -47,15 +47,9 @@
 	<% out.print("Welcome");%>
 	<% out.print(session.getAttribute("email"));%>
 	</center>
-<center>
-<form action="run.com.Recieve">
-<h1>Enter Your Code in Java Language  Below</h1> <br>
-<textarea rows="25" cols="100" name="area"> </textarea>
-<br>
-<br>
-<br>
-<input type="submit" value="Compile">
-</form>
-</center>
+
+<h3> <a href="JavaQuestions.html">Choose For JAVA</a></h3> <br> <br>
+<h3> <a href="CQuestions.html">Choose For C</a></h3> <br> <br>
+
 </body>
 </html>
